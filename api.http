@@ -1,0 +1,27 @@
+GET http://localhost:3000/users HTTP/1.1
+
+###
+GET http://localhost:3000/users/636e628f713467ac262f27e5 HTTP/1.1
+
+###
+POST http://localhost:3000/users HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Gustavo",
+    "username": "ghov",
+    "password": "Test@123456"
+}
+
+###
+PATCH http://localhost:3000/users/636e628f713467ac262f27e5 HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Gustavo1",
+    "username": "ghov",
+    "password": "Test@1234"
+}
+
+###
+PUT http://localhost:3000/users?id=636e628f713467ac262f27e5&status=block HTTP/1.1
