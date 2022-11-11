@@ -1,6 +1,7 @@
 import { Body, Controller, Post, Req, UseGuards } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import { AuthService } from './auth.service';
+import { RefreshTokenGuard } from './guards/refreshToken.guard';
 
 @Controller('auth')
 export class AuthController {
@@ -12,6 +13,7 @@ export class AuthController {
     return this.authService.signin(req.user);
   }
 
+  @UseGuards(RefreshTokenGuard)
   @Post('refresh')
   refresh(@Body() { refresh_token }: { refresh_token: string }) {
     return refresh_token;
