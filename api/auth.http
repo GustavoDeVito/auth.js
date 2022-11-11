@@ -1,0 +1,15 @@
+POST http://localhost:3000/auth/signin HTTP/1.1
+content-type: application/json
+
+{
+    "username": "ghov",
+    "password": "Test@123456"
+}
+
+###
+POST http://localhost:3000/auth/refresh HTTP/1.1
+content-type: application/json
+
+{
+    "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MzZlOGNiNjdhNzViZDU2OTMwYzM0ZTkiLCJuYW1lIjoiR3VzdGF2byIsImlhdCI6MTY2ODE4OTQxNSwiZXhwIjoxNjY4MTg5NDc1fQ.sGfn01U1dgNLu-2AsSZpBqmn0r2stP793iYQ4gVu0qQ"
+}

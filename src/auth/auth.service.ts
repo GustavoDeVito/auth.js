@@ -11,10 +11,13 @@ export class AuthService {
   ) {}
 
   async signin(user) {
-    const payload = { sub: user.id, name: user.name };
+    const access_token = { sub: user.id, name: user.name };
+    const refresh_token = { sub: user.id };
 
     return {
-      token: this.jwtService.sign(payload),
+      access_token: this.jwtService.sign(access_token),
+      refresh_token: this.jwtService.sign(refresh_token),
+      expiresIn: 0,
     };
   }
 

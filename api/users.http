@@ -18,10 +18,8 @@ PATCH http://localhost:3000/users/636e628f713467ac262f27e5 HTTP/1.1
 content-type: application/json
 
 {
-    "name": "Gustavo1",
-    "username": "ghov",
-    "password": "Test@1234"
+    "name": "Gustavo"
 }
 
 ###
-PUT http://localhost:3000/users?id=636e628f713467ac262f27e5&status=block HTTP/1.1
+PUT http://localhost:3000/users?id=636e628f713467ac262f27e5&status=active HTTP/1.1
