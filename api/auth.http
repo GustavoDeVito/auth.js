@@ -21,3 +21,4 @@ content-type: application/json
 #Refresh Token - 7d
 #eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MzZlOGNiNjdhNzViZDU2OTMwYzM0ZTkiLCJpYXQiOjE2NjgxOTQwNTAsImV4cCI6MTY2ODc5ODg1MH0.8JI_eca4x_rgOR9q9Wn0RCpc8XMPp6RSYnRcVRODJRw
 
+#Erros in refresh_token
