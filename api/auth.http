@@ -8,8 +8,16 @@ content-type: application/json
 
 ###
 POST http://localhost:3000/auth/refresh HTTP/1.1
+Authorization: Bearer eyJzdWIiOiI2MzZlOGNiNjdhNzViZDU2OTMwYzM0ZTkiLCJuYW1lIjoiR3VzdGF2byIsImlhdCI6MTY2ODE5MzMyMywiZXhwIjoxNjY4MTk0MjIzfQ.fu5zuNZ4UmqLvSNy7ShBwV-KtsWFehdtqswGBsgKVoM
 content-type: application/json
 
 {
     "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MzZlOGNiNjdhNzViZDU2OTMwYzM0ZTkiLCJuYW1lIjoiR3VzdGF2byIsImlhdCI6MTY2ODE4OTQxNSwiZXhwIjoxNjY4MTg5NDc1fQ.sGfn01U1dgNLu-2AsSZpBqmn0r2stP793iYQ4gVu0qQ"
 }
+
+#Access Token - 15m
+#eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MzZlOGNiNjdhNzViZDU2OTMwYzM0ZTkiLCJuYW1lIjoiR3VzdGF2byIsImlhdCI6MTY2ODE5NDA1MCwiZXhwIjoxNjY4MTk0OTUwfQ.3d8l75PrfjEi4aFKdwEpUN9_FLJHtbBjODNJ_kSNsh0
+
+#Refresh Token - 7d
+#eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MzZlOGNiNjdhNzViZDU2OTMwYzM0ZTkiLCJpYXQiOjE2NjgxOTQwNTAsImV4cCI6MTY2ODc5ODg1MH0.8JI_eca4x_rgOR9q9Wn0RCpc8XMPp6RSYnRcVRODJRw
+
