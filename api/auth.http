@@ -8,13 +8,8 @@ content-type: application/json
 
 ###
 POST http://localhost:3000/auth/refresh HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MzZlOGNiNjdhNzViZDU2OTMwYzM0ZTkiLCJpYXQiOjE2Njg0MjUxMzksImV4cCI6MTY2OTAyOTkzOX0.NpWFJsmPz2o0S_-gRzjnEAsscpUeb_OR-pMfDQBgk74
+Authorization: Bearer token
 content-type: application/json
 
 #Access Token - 15m
-#eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MzZlOGNiNjdhNzViZDU2OTMwYzM0ZTkiLCJuYW1lIjoiR3VzdGF2byIsImlhdCI6MTY2ODE5NDA1MCwiZXhwIjoxNjY4MTk0OTUwfQ.3d8l75PrfjEi4aFKdwEpUN9_FLJHtbBjODNJ_kSNsh0
-
 #Refresh Token - 7d
-#eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MzZlOGNiNjdhNzViZDU2OTMwYzM0ZTkiLCJpYXQiOjE2NjgxOTQwNTAsImV4cCI6MTY2ODc5ODg1MH0.8JI_eca4x_rgOR9q9Wn0RCpc8XMPp6RSYnRcVRODJRw
-
-#Erros in refresh_token
