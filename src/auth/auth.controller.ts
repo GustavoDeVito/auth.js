@@ -1,4 +1,4 @@
-import { Body, Controller, Post, Req, UseGuards } from '@nestjs/common';
+import { Controller, Headers, Post, Req, UseGuards } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import { AuthService } from './auth.service';
 import { RefreshTokenGuard } from './guards/refreshToken.guard';
@@ -15,7 +15,9 @@ export class AuthController {
 
   @UseGuards(RefreshTokenGuard)
   @Post('refresh')
-  refresh(@Body() { refresh_token }: { refresh_token: string }) {
-    return refresh_token;
+  refresh(@Headers() headers: Record<string, string>) {
+    return {
+      refresh_token: headers['authorization'].replace('Bearer', '').trim(),
+    };
   }
 }
