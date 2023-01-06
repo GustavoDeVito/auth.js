@@ -1,3 +1,4 @@
+### Login
 POST http://localhost:3000/auth/signin HTTP/1.1
 content-type: application/json
 
@@ -6,9 +7,9 @@ content-type: application/json
     "password": "Test@123456"
 }
 
-###
+### Refresh
 POST http://localhost:3000/auth/refresh HTTP/1.1
-Authorization: Bearer token
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2M2I4NjBjM2M2ZWY4ZDM1NzE2MjU0ODMiLCJpYXQiOjE2NzMwMjkzNTUsImV4cCI6MTY3MzYzNDE1NX0.5oFsmTLD4zY5qkUSG27nAM7cEf8c8TH-IgMyvZgkRjk
 content-type: application/json
 
 #Access Token - 15m

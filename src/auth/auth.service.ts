@@ -1,8 +1,7 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { compareSync } from 'bcrypt';
 import { UsersService } from 'src/users/users.service';
-import * as moment from 'moment-timezone';
 import { SigninI } from './interfaces/auth.interface';
 
 @Injectable()
@@ -12,8 +11,8 @@ export class AuthService {
     private readonly jwtService: JwtService,
   ) {}
 
-  async signin(user): Promise<SigninI> {
-    const [access_token, refresh_token] = await Promise.all([
+  async token(user): Promise<SigninI> {
+    const [accessToken, refreshToken] = await Promise.all([
       this.jwtService.signAsync(
         {
           sub: user.id,
@@ -35,16 +34,27 @@ export class AuthService {
       ),
     ]);
 
-    const expiresIn = moment
-      .tz(new Date(), 'America/Sao_Paulo')
-      .add(15, 'minutes')
-      .format();
+    const token = this.jwtService.decode(accessToken);
 
     return {
-      access_token,
-      refresh_token,
-      expiresIn,
+      accessToken,
+      refreshToken,
+      expiresIn: token['exp'],
     };
+  }
+
+  async refreshToken({ refreshToken: token }: { refreshToken: string }) {
+    try {
+      const payload = this.jwtService.decode(token);
+
+      const id = payload['sub'];
+
+      const user = await this.userService.findOne(id);
+
+      return await this.token(user);
+    } catch (error) {
+      throw new UnauthorizedException();
+    }
   }
 
   async validateUser(username: string, password: string) {
